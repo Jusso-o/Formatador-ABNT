@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formatador ABNT 9.2 - Exportação Completa</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formatador ABNT 9.2: Exportação Completa (Copiar e Baixar) 💾</h1>
+
+      <div class="controls">
+        <label for="seletorFonte">Escolha a Fonte:</label>
+        <select id="seletorFonte">
+          <option value="times">Times New Roman</option>
+          <option value="arial">Arial</option>
+        </select>
+        <button onclick="aplicarABNT()">
+          Aplicar Formatação e Gerar Páginas
+        </button>
+      </div>
+      <div class="page-layout">
+        <div class="input-column">
+          <h2>✍️ Caixa de Entrada de Texto</h2>
+
+          <h3>1. Fluxo Principal (Corpo, Títulos e Notas)</h3>
+          <textarea
+            id="textoPrincipal"
+            rows="18"
+            placeholder="Cole todo o seu texto aqui, na ordem desejada.
+
+O sistema detecta e numera automaticamente os títulos:
+* **Título Nível 1:** Use CAIXA ALTA (Ex: INTRODUÇÃO).
+* **Título Nível 2:** Use Apenas Iniciais Maiúsculas (Ex: Revisão de Literatura).
+
+Use os marcadores para as seções especiais:
+- [CITACAO_LONGA] antes da citação longa.
+- [NOTA_RODAPE] antes do bloco de notas de rodapé."
+          ></textarea>
+
+          <h3>2. Lista de Referências</h3>
+          <textarea
+            id="textoReferencias"
+            rows="6"
+            placeholder="Cole cada referência em uma nova linha."
+          ></textarea>
+        </div>
+        <div class="output-column">
+          <h2>🖥️ Visualização ABNT (Simulação de Página A4)</h2>
+
+          <div id="document-view">
+            <div id="loading-overlay" style="display: none">
+              <div class="spinner"></div>
+              <p>Formatando o seu documento ABNT...</p>
+            </div>
+            <p class="placeholder-text">
+              O seu documento formatado aparecerá aqui, dividido em páginas
+              virtuais A4, após clicar no botão.
+            </p>
+          </div>
+
+          <div class="export-buttons">
+            <button class="copy-btn" onclick="copiarDocumento()">
+              Copiar (Formato Riqueza)
+            </button>
+            <button class="download-btn" onclick="downloadDocumento()">
+              Baixar Arquivo (.DOC)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
